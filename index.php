@@ -68,7 +68,7 @@ switch ($step) {
         $rDeals = executeREST($arAccessParams['client_endpoint'], 'crm.deal.list', $arParams,
             $arAccessParams['access_token']);
 
-        $arParams = array( 'id' => '357' );
+        $arParams = array( 'id' => '35' );
 
         $rDealInfo = executeREST($arAccessParams['client_endpoint'], 'crm.deal.get', $arParams,
             $arAccessParams['access_token']);
