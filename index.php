@@ -15,7 +15,13 @@ $domain = isset($_REQUEST['portal']) ? $_REQUEST['portal'] : ( isset($_REQUEST['
 
 $step = 0;
 
-if (isset($_REQUEST['portal'])) $step = 1;
+if (isset($_REQUEST['portal']))
+    {
+        $step = 1;
+
+        sleep(5);
+        requestCode($domain);
+    }
 if (isset($_REQUEST['code'])) $step = 2;
 
 $btokenRefreshed = null;
@@ -32,14 +38,11 @@ $arScope = array('user');
 switch ($step) {
     case 1:
         // we need to get the first authorization code from Bitrix24 where our application is _already_ installed
-
         ?>
         <script type="text/javascript">
-            window.location.replace($domain);
+            window.location.replace('<?=$domain?>');
         </script>
         <?
-        // sleep(3);
-        // requestCode($domain);
         break;
 
     case 2:
@@ -67,9 +70,17 @@ switch ($step) {
 <?if ($step == 0) {?>
     step 1 (redirecting to Bitrix24):<br/>
     <form action="" method="post">
-        <input type="text" name="portal" placeholder="Bitrix24 URL">
-        <input type="submit" value="Authorize">
+        <input type="text" name="portal" id="portal" placeholder="Bitrix24 domain">
+        <!-- <input type="submit" value="Authorize"> -->
+        <input type="button" name="sbmt" id="sbmt" onclick="go_auth()">
     </form>
+    <script type="text/javascript">
+        function go_auth() {
+            let domain = document.getElementById("portal").value
+            url = 'https://' + domain + '/oauth/authorize/?client_id=<?=urlencode(APP_ID)?>';
+            window.location.replace(url); // window.open(url);
+        }
+    </script>
     <?
 }
 elseif ($step == 2) {
