@@ -38,7 +38,7 @@
         curl_close($curl);
 
         // print_r($result);
-        echo $result['result']['NAME'].' '.$result['result']['LAST_NAME'];
+        echo "Приложение с стороннего сервера: ".$result['result']['NAME'].' '.$result['result']['LAST_NAME'];
     
         // ================================================================
         // use $_REQUEST data as OAuth 2.0 params to execute REST API calls
