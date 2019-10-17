@@ -60,7 +60,12 @@ switch ($step) {
         $arCurrentB24User = executeREST($arAccessParams['client_endpoint'], 'user.current', array(),
             $arAccessParams['access_token']);
         
-        $rDeals = executeREST($arAccessParams['client_endpoint'], 'crm.deal.list', array(),
+        $arParams = array("order" => array("STAGE_ID" => "ASC"),
+                          "filter" => array(">PROBABILITY" => '1'),
+                          // "select" => array( "ID", "TITLE", "STAGE_ID", "PROBABILITY", "OPPORTUNITY", "CURRENCY_ID" ),
+                          );
+        
+        $rDeals = executeREST($arAccessParams['client_endpoint'], 'crm.deal.list', $arParams,
             $arAccessParams['access_token']);
 
         break;
