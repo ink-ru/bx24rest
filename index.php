@@ -33,6 +33,7 @@ $arScope = array('user');
 <head>
     <meta charset="UTF-8">
     <title>Quick start. Local server-side application without UI in Bitrix24</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <?
 switch ($step) {
@@ -73,7 +74,7 @@ switch ($step) {
 <?if ($step == 0) {?>
     step 1 (redirecting to Bitrix24):<br/>
     <form action="" method="post">
-        <input type="text" name="portal" id="portal" placeholder="Bitrix24 domain">
+        <span>https://</span><input type="text" name="portal" id="portal" placeholder="Bitrix24 domain" value="gir.bitrix24.ru">
         <!-- <input type="submit" value="Authorize"> -->
         <input type="button" name="sbmt" id="sbmt" onclick="go_auth()">
     </form>
