@@ -1,7 +1,4 @@
 <?
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 function redirect($url)
 {
     Header("HTTP 302 Found");
@@ -9,30 +6,38 @@ function redirect($url)
     die();
 }
 
-define('APP_ID', 'local.5da8013d689617.20409150'); // take it from Bitrix24 after adding a new application
-define('APP_SECRET_CODE', 'VEBs3BE0APuotRGAS4oH6jfCiNZ4ZjEX89f9s8v2aEWPDXDPWu'); // take it from Bitrix24 after adding a new application
-define('APP_REG_URL', 'https://bx24standalone.herokuapp.com/index.php'); // the same URL you should set when adding a new application in Bitrix24
+define('APP_ID', 'local.564084a58ad8b0.76333855'); // take it from Bitrix24 after adding a new application
+define('APP_SECRET_CODE', '1798efe41b0c132c1ea756beae819560'); // take it from Bitrix24 after adding a new application
+define('APP_REG_URL', 'http://your-server.com/index.php'); // the same URL you should set when adding a new application in Bitrix24
+
 
 $domain = isset($_REQUEST['portal']) ? $_REQUEST['portal'] : ( isset($_REQUEST['domain']) ? $_REQUEST['domain'] : 'empty');
 
 $step = 0;
 
 if (isset($_REQUEST['portal'])) $step = 1;
-if (isset($_REQUEST['code']))$step = 2;
+if (isset($_REQUEST['code'])) $step = 2;
 
 $btokenRefreshed = null;
 
 $arScope = array('user');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick start. Local server-side application without UI in Bitrix24</title>
 
+<?
 switch ($step) {
     case 1:
         // we need to get the first authorization code from Bitrix24 where our application is _already_ installed
+
         ?>
         <script type="text/javascript">
             window.location.replace("http://www.w3schools.com");
         </script>
         <?
-        
         sleep(3);
         requestCode($domain);
         break;
@@ -56,11 +61,6 @@ switch ($step) {
         break;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Quick start. Local server-side application without UI in Bitrix24</title>
 
 </head>
 <body>
