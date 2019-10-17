@@ -62,7 +62,7 @@ switch ($step) {
         
         $arParams = array("order" => array("STAGE_ID" => "DESC"),
 //                           "filter" => array(">PROBABILITY" => '1'),
-                          // "select" => array( "ID", "TITLE", "STAGE_ID", "PROBABILITY", "OPPORTUNITY", "CURRENCY_ID" ),
+                          "select" => array( "ID", "TITLE", "STAGE_ID", "PROBABILITY", "OPPORTUNITY", "CURRENCY_ID" ),
                           );
         
         $rDeals = executeREST($arAccessParams['client_endpoint'], 'crm.deal.list', $arParams,
