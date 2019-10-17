@@ -27,6 +27,13 @@ $arScope = array('user');
 switch ($step) {
     case 1:
         // we need to get the first authorization code from Bitrix24 where our application is _already_ installed
+        ?>
+        <script type="text/javascript">
+            window.location.replace("http://www.w3schools.com");
+        </script>
+        <?
+        
+        sleep(3);
         requestCode($domain);
         break;
 
