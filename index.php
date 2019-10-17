@@ -6,9 +6,9 @@ function redirect($url)
     die();
 }
 
-define('APP_ID', 'local.564084a58ad8b0.76333855'); // take it from Bitrix24 after adding a new application
-define('APP_SECRET_CODE', '1798efe41b0c132c1ea756beae819560'); // take it from Bitrix24 after adding a new application
-define('APP_REG_URL', 'http://your-server.com/index.php'); // the same URL you should set when adding a new application in Bitrix24
+define('APP_ID', 'local.5da72e5b2957c6.50512314'); // take it from Bitrix24 after adding a new application
+define('APP_SECRET_CODE', 'MXe60sbprDzpHGBsR8XAbKN4lg3VFgyu9F6OOmA4vuxGZVgICB'); // take it from Bitrix24 after adding a new application
+define('APP_REG_URL', 'https://bx24rest.herokuapp.com/index.php'); // the same URL you should set when adding a new application in Bitrix24
 
 
 $domain = isset($_REQUEST['portal']) ? $_REQUEST['portal'] : ( isset($_REQUEST['domain']) ? $_REQUEST['domain'] : 'empty');
