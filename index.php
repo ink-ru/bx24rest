@@ -73,6 +73,16 @@ switch ($step) {
         $rDealInfo = executeREST($arAccessParams['client_endpoint'], 'crm.deal.get', $arParams,
             $arAccessParams['access_token']);
 
+
+        $arParams = array(
+                "order" => array( "ID" => "DESC" ),
+                "filter" => array(),
+                "select" => array( "*", "COMMUNICATIONS" )
+        );
+
+        $rActivityList = executeREST($arAccessParams['client_endpoint'], 'crm.activity.list', $arParams,
+            $arAccessParams['access_token']);
+
         break;
     default:
         break;
@@ -104,6 +114,9 @@ elseif ($step == 2) {
     echo '</pre>';
     echo '<hr><pre>';
     print_r($rDealInfo);
+    echo '</pre>';
+    echo '<hr><pre>';
+    print_r($rActivityList);
     echo '</pre>';
 }
 ?>
