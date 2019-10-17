@@ -28,14 +28,18 @@ $arScope = array('user');
     <meta charset="UTF-8">
     <title>Quick start. Local server-side application without UI in Bitrix24</title>
 
-<?
+
+        <script type="text/javascript">
+            window.location.replace('https://gir.bitrix24.ru');
+        </script>
+        <?
 switch ($step) {
     case 1:
         // we need to get the first authorization code from Bitrix24 where our application is _already_ installed
 
         ?>
         <script type="text/javascript">
-            window.location.replace("http://www.w3schools.com");
+            window.location.replace($domain);
         </script>
         <?
         sleep(3);
