@@ -60,7 +60,7 @@ switch ($step) {
         $arCurrentB24User = executeREST($arAccessParams['client_endpoint'], 'user.current', array(),
             $arAccessParams['access_token']);
         
-        $arParams = array("order" => array("STAGE_ID" => "ASC"),
+        $arParams = array("order" => array("STAGE_ID" => "DESC"),
 //                           "filter" => array(">PROBABILITY" => '1'),
                           // "select" => array( "ID", "TITLE", "STAGE_ID", "PROBABILITY", "OPPORTUNITY", "CURRENCY_ID" ),
                           );
