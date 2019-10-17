@@ -61,7 +61,7 @@ switch ($step) {
             $arAccessParams['access_token']);
         
         $arParams = array("order" => array("STAGE_ID" => "ASC"),
-                          "filter" => array(">PROBABILITY" => '1'),
+//                           "filter" => array(">PROBABILITY" => '1'),
                           // "select" => array( "ID", "TITLE", "STAGE_ID", "PROBABILITY", "OPPORTUNITY", "CURRENCY_ID" ),
                           );
         
