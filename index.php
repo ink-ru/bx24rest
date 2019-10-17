@@ -68,6 +68,11 @@ switch ($step) {
         $rDeals = executeREST($arAccessParams['client_endpoint'], 'crm.deal.list', $arParams,
             $arAccessParams['access_token']);
 
+        $arParams = array( 'id' => '357' );
+
+        $rDealInfo = executeREST($arAccessParams['client_endpoint'], 'crm.deal.get', $arParams,
+            $arAccessParams['access_token']);
+
         break;
     default:
         break;
@@ -94,8 +99,11 @@ switch ($step) {
 }
 elseif ($step == 2) {
     echo "Данные из Bitrix24".$arCurrentB24User["result"]["NAME"] . " " . $arCurrentB24User["result"]["LAST_NAME"];
-    echo '<pre>';
+    echo '<hr><pre>';
     print_r($rDeals);
+    echo '</pre>';
+    echo '<hr><pre>';
+    print_r($rDealInfo);
     echo '</pre>';
 }
 ?>
