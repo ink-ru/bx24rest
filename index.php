@@ -63,9 +63,9 @@
         $result = json_decode(curl_exec($curl), true);
         curl_close($curl);
         
-        echo '<h4>Deals</h4><pre>'
+        echo '<h4>Deals</h4><pre>';
         print_r($result);
-        echo '</pre>'
+        echo '</pre>';
         
     
     ?>
