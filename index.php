@@ -43,7 +43,6 @@
         // ================================================================
         // use $_REQUEST data as OAuth 2.0 params to execute REST API calls
 
-        filter[CLOSED]=Y&filter[STAGE_SEMANTIC_ID]=S&Params[NAV_PARAMS][nPageSize]=50&Params[NAV_PARAMS][iNumPage]=2
         $queryUrl = 'https://'.$_REQUEST['DOMAIN'].'/rest/crm.deal.list.json';
 
         // as user.current does not have any specific parameters we just set an access_token ("auth")
