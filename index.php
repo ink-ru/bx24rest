@@ -10,7 +10,6 @@ define('APP_ID', 'local.5da8013d689617.20409150'); // take it from Bitrix24 afte
 define('APP_SECRET_CODE', 'VEBs3BE0APuotRGAS4oH6jfCiNZ4ZjEX89f9s8v2aEWPDXDPWu'); // take it from Bitrix24 after adding a new application
 define('APP_REG_URL', 'https://bx24standalone.herokuapp.com/'); // the same URL you should set when adding a new application in Bitrix24
 
-
 $domain = isset($_REQUEST['portal']) ? $_REQUEST['portal'] : ( isset($_REQUEST['domain']) ? $_REQUEST['domain'] : 'empty');
 
 $step = 0;
@@ -27,6 +26,7 @@ if (isset($_REQUEST['code'])) $step = 2;
 $btokenRefreshed = null;
 
 $arScope = array('user');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
